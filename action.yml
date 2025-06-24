@@ -12,7 +12,7 @@ runs:
   using: 'composite'
   steps:
     - name: Build Docker image for SDK
-      run: docker build -t ps4sdk .
+      run: docker build -t ps4sdk -f ${{ github.action_path }}/Dockerfile ${{ github.action_path }}
       shell: bash
 
     - name: Build application inside SDK container
